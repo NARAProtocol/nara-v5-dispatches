@@ -56,7 +56,7 @@ Instead of making participants wait months or years to see protocol activity, `N
 
 Every 15 minutes, a new pulse settles across three real assets simultaneously:
 * **`NARA`** released deterministically from the sealed emission reserve;
-* **`ETH`** and **`USDC`** routed from autonomous Uniswap v4 pool fee activity (`NARALiquidityHookV5` at `0x07d8F2Dfd121B10dE3176DeAb6A8C0eaa2646aCC` and `NARAFeeVaultV5` at `0xF1f361F803895BF5cf67eC6C506dbFEf2f6E88Cf`).
+* **`ETH`** routed from the `5%` secondary-market royalty on `NARAPositionSaleV5` (`0x04Ac83045d26259D46400Ce6beb9bBd0641df225`), and **`USDC`** (plus `NARA` sell fees) routed from Uniswap v4 `USDC/NARA` pool swap fees (`NARALiquidityHookV5` at `0x07d8F2Dfd121B10dE3176DeAb6A8C0eaa2646aCC`, `NARAFeeVaultV5` at `0xF1f361F803895BF5cf67eC6C506dbFEf2f6E88Cf`, and zero-delay `NARATreasuryFeeControllerV5` at `0xB6A436b48222C94fe427ecAfB263DF9cf42646b9`).
 
 And because NARA V5 is wired directly into **CryptoSLIP V3.2**, you can claim your accrued `NARA`, `ETH`, or `USDC` pulse rewards and wrap them straight into a shareable payment Slip in a single flow.
 
@@ -101,7 +101,7 @@ For auditors, researchers, and automated verification engines, here is the exact
   ```
 * **Three Supported Reward Assets (`enum RewardAsset { NARA, ETH, USDC }`, scaled internally at `SCALE = 1e27`):**
   1. **`RewardAsset.NARA` (`index 0`, `18` decimals, `0x91FB78A9F46B67f54BbD4489941d19666b2fAe0f`):** Funded per epoch from `NARAEmissionReserveV5.releaseForEpoch(epoch, requested)` plus any direct `NARARewardLedgerV5.donateToken(RewardAsset.NARA, amount)` receipts.
-  2. **`RewardAsset.ETH` (`index 1`, `18` decimals, native `address(0)`):** Funded via `NARARewardIngressV5` (`0x44130CC47b886D8488041F5eaE271477D1aFA909`) and `NARAFeeVaultV5` (`0xF1f361F803895BF5cf67eC6C506dbFEf2f6E88Cf`) calling `NARARewardLedgerV5.donateETH()`.
+  2. **`RewardAsset.ETH` (`index 1`, `18` decimals, native `address(0)`):** Funded from the `5%` secondary-market royalty on `NARAPositionSaleV5` (`0x04Ac83045d26259D46400Ce6beb9bBd0641df225`) via `NARARewardIngressV5` (`0x44130CC47b886D8488041F5eaE271477D1aFA909`) calling `NARARewardLedgerV5.donateETH()`.
   3. **`RewardAsset.USDC` (`index 2`, `6` decimals, Base `USDC` `0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913`):** Funded via `NARARewardLedgerV5.donateToken(RewardAsset.USDC, amount)`.
 
 #### 5.2 What Events & Conditions Authorize and Accrue Rewards?
