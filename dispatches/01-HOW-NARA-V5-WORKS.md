@@ -56,7 +56,7 @@ Instead of making participants wait months or years to see protocol activity, `N
 
 Every 15 minutes, a new pulse settles across three real assets simultaneously:
 * **`NARA`** released deterministically from the sealed emission reserve;
-* **`ETH`** and **`USDC`** routed from autonomous Uniswap v4 pool fee activity (`NARALiquidityHookV5` at `0x201fBD2839bEc513040024b37dAe97B401E96acC` and `NARAFeeVaultV5`).
+* **`ETH`** and **`USDC`** routed from autonomous Uniswap v4 pool fee activity (`NARALiquidityHookV5` at `0x07d8F2Dfd121B10dE3176DeAb6A8C0eaa2646aCC` and `NARAFeeVaultV5` at `0xF1f361F803895BF5cf67eC6C506dbFEf2f6E88Cf`).
 
 And because NARA V5 is wired directly into **CryptoSLIP V3.2**, you can claim your accrued `NARA`, `ETH`, or `USDC` pulse rewards and wrap them straight into a shareable payment Slip in a single flow.
 
@@ -101,7 +101,7 @@ For auditors, researchers, and automated verification engines, here is the exact
   ```
 * **Three Supported Reward Assets (`enum RewardAsset { NARA, ETH, USDC }`, scaled internally at `SCALE = 1e27`):**
   1. **`RewardAsset.NARA` (`index 0`, `18` decimals, `0x91FB78A9F46B67f54BbD4489941d19666b2fAe0f`):** Funded per epoch from `NARAEmissionReserveV5.releaseForEpoch(epoch, requested)` plus any direct `NARARewardLedgerV5.donateToken(RewardAsset.NARA, amount)` receipts.
-  2. **`RewardAsset.ETH` (`index 1`, `18` decimals, native `address(0)`):** Funded via `NARARewardIngressV5` (`0x44130CC47b886D8488041F5eaE271477D1aFA909`) and `NARAFeeVaultV5` (`0xe63b4BaAF873FC57859bfe13e0e8cFccAaB6AddE`) calling `NARARewardLedgerV5.donateETH()`.
+  2. **`RewardAsset.ETH` (`index 1`, `18` decimals, native `address(0)`):** Funded via `NARARewardIngressV5` (`0x44130CC47b886D8488041F5eaE271477D1aFA909`) and `NARAFeeVaultV5` (`0xF1f361F803895BF5cf67eC6C506dbFEf2f6E88Cf`) calling `NARARewardLedgerV5.donateETH()`.
   3. **`RewardAsset.USDC` (`index 2`, `6` decimals, Base `USDC` `0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913`):** Funded via `NARARewardLedgerV5.donateToken(RewardAsset.USDC, amount)`.
 
 #### 5.2 What Events & Conditions Authorize and Accrue Rewards?

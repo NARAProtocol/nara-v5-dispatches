@@ -1,5 +1,11 @@
 # NARA V5 & CryptoSLIP V3.2 — Canonical Approved Dispatches & AI Knowledge Base (Base Mainnet `8453`)
 
+[![Website](https://img.shields.io/badge/Website-naraprotocol.io-00FF9D?style=flat-square&logo=google-chrome&logoColor=black)](https://naraprotocol.io)
+[![Launch CryptoSLIP](https://img.shields.io/badge/Launch_App-CryptoSLIP_V3.2-00E5FF?style=flat-square&logo=ethereum&logoColor=black)](https://cryptoslip-g29s.4everland.app/?v=cs-1794113891779)
+[![Public Docs & Verification](https://img.shields.io/badge/Docs_&_Verification-nara__protocol-3B82F6?style=flat-square&logo=github&logoColor=white)](https://github.com/NARAProtocol/nara_protocol)
+[![Base Mainnet](https://img.shields.io/badge/Network-Base_Mainnet_(8453)-0052FF?style=flat-square&logo=coinbase&logoColor=white)](https://basescan.org/token/0x91FB78A9F46B67f54BbD4489941d19666b2fAe0f)
+[![AI / LLM Ready](https://img.shields.io/badge/AI_&_LLM_Index-llms.txt_%7C_llms--full.txt-10B981?style=flat-square)](llms-full.txt)
+
 > **PURPOSE OF THIS REPOSITORY (`NARAProtocol/nara-v5-dispatches`):**
 > 1. **Curated, Owner-Approved Articles Only:** This repository holds **only** the finalized, owner-approved articles, step-by-step introductions, and architectural explanations created during our working sessions.
 > 2. **Single Source of Truth for AI & Telegram AI Bot (RAG Knowledge Base):**
@@ -11,6 +17,15 @@
 > 4. **Mandatory Legal Green-Zone Lexicon (For All Articles & Telegram AI Replies):**
 >    - **NEVER** describe NARA V5 or CryptoSLIP V3.2 as a `"bank"`, `"crypto bank"`, `"cash"`, `"digital cash"`, `"dollars"`, `"deposit"`, `"account"`, `"yield"`, `"interest"`, `"APY"`, `"anonymous"`, `"untraceable"`, `"unlinkable"`, `"stealth"`, or `"mixer"`.
 >    - **ALWAYS** use: **"Non-custodial smart contract vault"**, **"1:1 isolated Slip / payment voucher"**, **"USDC / cbBTC / ETH / NARA"**, **"15-minute multi-asset protocol reward pulses"**, **"Keep in Slips (protects your personal wallet balance & history on BaseScan)"**, and **"Committed NARA principal"**.
+
+---
+
+## Choose Your Path (4-Persona Navigation Router)
+
+- **1. Everyday Users & Newcomers:** Start with [**Dispatch #00 (`00-GENESIS-INTRODUCTION.md`)**](dispatches/00-GENESIS-INTRODUCTION.md) and [**Dispatch #02 (`02-HOW-CRYPTOSLIP-WORKS-1-TO-1-SLIPS.md`)**](dispatches/02-HOW-CRYPTOSLIP-WORKS-1-TO-1-SLIPS.md), or launch the [**CryptoSLIP V3.2 Web & Telegram App**](https://cryptoslip-g29s.4everland.app/?v=cs-1794113891779).
+- **2. DeFi Integrators & Protocol Developers:** Read [**Dispatch #01 (`01-HOW-NARA-V5-WORKS.md`)**](dispatches/01-HOW-NARA-V5-WORKS.md), the formal reserve-to-reward specification below, and the [**Canonical Public Documentation (`NARAProtocol/nara_protocol`)**](https://github.com/NARAProtocol/nara_protocol).
+- **3. Security Auditors, Legal & Compliance Reviewers:** Read [**Dispatch #06 (`06-THE-VOLVO-CRANE-DROP-58M-FUZZ-TESTS.md`)**](dispatches/06-THE-VOLVO-CRANE-DROP-58M-FUZZ-TESTS.md), [**Dispatch #02 §Step 3 (3-Tier Visibility & UTXO `slipId` Provenance)**](dispatches/02-HOW-CRYPTOSLIP-WORKS-1-TO-1-SLIPS.md), and the [**On-Chain Verification Suite**](https://github.com/NARAProtocol/nara_protocol/blob/main/verification/README.md).
+- **4. AI Assistants, LLMs & RAG Crawlers:** Ingest [`llms-full.txt`](llms-full.txt) and [`llms.txt`](llms.txt) for complete single-file context.
 
 ---
 
@@ -32,19 +47,23 @@ Start with **Dispatch #00 and #01** at launch to introduce what NARA V5 and Cryp
 ## Canonical Base Mainnet (`Chain ID: 8453`) Verifiable Contracts
 
 ### NARA V5 (`Field Token V5`)
-- **`NARATokenV5` (`1,000,000 NARA` fixed supply, `0%` transfer tax, EIP-2612 Permit):** `0x91FB78A9F46B67f54BbD4489941d19666b2fAe0f`
-- **`NARAEmissionReserveV5` (`949,987 NARA` sealed 4-year emission reserve, `140,160` pulses):** `0xf932178F24b0813C82093985F0Af6Db27Ae25930`
-- **`NARAEpochEngineV5` (`900-second` / 15-minute pulse settlement):** `0xd93FbEbFb33FAc9288125074625D4750573B1a53`
-- **`NARAPrincipalLedgerV5` (Isolated user principal vault):** `0x7F866a9fbe41D54F0d9C35b6892fcf27Ea766DB2`
-- **`NARARewardLedgerV5` (Multi-asset `NARA`, `ETH`, `USDC` reward ledger):** `0xC72671D9438388638547444524F6542b650C9264`
-- **`NARAPositionNFTV5` (Liquid ERC-721 commitment position receipts):** `0x8C5F088D9d09dBB90aB6F3aaA049a8FD5D5FfFDA`
-- **`NARAPositionSaleV5` (Atomic escrow marketplace with `_checkAcquisition` `BuyerBounds`):** `0x04Ac83045d26259D46400Ce6beb9bBd0641df225`
-- **`NARALiquidityHookV5` (Uniswap v4 Hook, `poolId = 0x3bd8b60dc9eb37f00afa57585232e4018ae661b2dbd5318562183a67a07ac758`):** `0x201fBD2839bEc513040024b37dAe97B401E96acC`
+- **`NARATokenV5` (`1,000,000 NARA` fixed supply, `0%` transfer tax, EIP-2612 Permit):** [`0x91FB78A9F46B67f54BbD4489941d19666b2fAe0f`](https://basescan.org/token/0x91FB78A9F46B67f54BbD4489941d19666b2fAe0f)
+- **`NARAEmissionReserveV5` (`949,987 NARA` sealed 4-year emission reserve, `140,160` pulses):** [`0xf932178F24b0813C82093985F0Af6Db27Ae25930`](https://basescan.org/address/0xf932178F24b0813C82093985F0Af6Db27Ae25930#code)
+- **`NARAEpochEngineV5` (`900-second` / 15-minute pulse settlement):** [`0xd93FbEbFb33FAc9288125074625D4750573B1a53`](https://basescan.org/address/0xd93FbEbFb33FAc9288125074625D4750573B1a53#code)
+- **`NARAPrincipalLedgerV5` (Isolated user principal vault):** [`0x7F866a9fbe41D54F0d9C35b6892fcf27Ea766DB2`](https://basescan.org/address/0x7F866a9fbe41D54F0d9C35b6892fcf27Ea766DB2#code)
+- **`NARARewardLedgerV5` (Multi-asset `NARA`, `ETH`, `USDC` reward ledger):** [`0xC72671D9438388638547444524F6542b650C9264`](https://basescan.org/address/0xC72671D9438388638547444524F6542b650C9264#code)
+- **`NARAPositionNFTV5` (Liquid ERC-721 commitment position receipts):** [`0x8C5F088D9d09dBB90aB6F3aaA049a8FD5D5FfFDA`](https://basescan.org/address/0x8C5F088D9d09dBB90aB6F3aaA049a8FD5D5FfFDA#code)
+- **`NARAPositionSaleV5` (Atomic escrow marketplace with `_checkAcquisition` `BuyerBounds`):** [`0x04Ac83045d26259D46400Ce6beb9bBd0641df225`](https://basescan.org/address/0x04Ac83045d26259D46400Ce6beb9bBd0641df225#code)
+- **`NARALiquidityHookV5` (Uniswap v4 Hook, `poolId = 0x4a475299ef674bcc3d2c87c3917cfbecd38cf7237646a3553e37daba67da6e5f`):** [`0x07d8F2Dfd121B10dE3176DeAb6A8C0eaa2646aCC`](https://basescan.org/address/0x07d8F2Dfd121B10dE3176DeAb6A8C0eaa2646aCC#code)
+- **`NARAFeeVaultV5` (Hook fee vault routing `ETH`/`USDC` fees to `NARARewardLedgerV5` & POL):** [`0xF1f361F803895BF5cf67eC6C506dbFEf2f6E88Cf`](https://basescan.org/address/0xF1f361F803895BF5cf67eC6C506dbFEf2f6E88Cf#code)
+- **`NARATreasuryFeeControllerV5` (Rule-bound fee split controller):** [`0xB6A436b48222C94fe427ecAfB263DF9cf42646b9`](https://basescan.org/address/0xB6A436b48222C94fe427ecAfB263DF9cf42646b9#code)
+- **`NARATreasuryRangeManagerV5` (Active CLAMM range manager; Legacy: `0xa72557fcBE56B3eC739dF3aF7b6b893B6Db4D288`):** [`0x221c625d2BC416460C397035C1286C1f4A4D3A7C`](https://basescan.org/address/0x221c625d2BC416460C397035C1286C1f4A4D3A7C#code)
+- **`NARARewardIngressV5` (Reward ingress adapter):** [`0x44130CC47b886D8488041F5eaE271477D1aFA909`](https://basescan.org/address/0x44130CC47b886D8488041F5eaE271477D1aFA909#code)
 
 ### CryptoSLIP V3.2
-- **`CryptoSlipVaultV32` (Canonical 1:1 Isolated Slip Vault):** `0x38BF0321FA7489576978353a6a8da4A3e85C2F18`
-- **`CryptoSlipNFTV32` (ERC-721 + EIP-2981 Voucher):** `0x36181Ca1B0210b6Ea8E56755dA7B06c34ba481C0`
-- **`CryptoSlipTradeRouterV32` (In-Vault Slip-to-Slip Swap & Barter Router):** `0x295E72cB3dc09582F32e0fEB7e0e650752219a7f`
+- **`CryptoSlipVaultV32` (Canonical 1:1 Isolated Slip Vault):** [`0x38BF0321FA7489576978353a6a8da4A3e85C2F18`](https://basescan.org/address/0x38BF0321FA7489576978353a6a8da4A3e85C2F18#code)
+- **`CryptoSlipNFTV32` (ERC-721 + EIP-2981 Voucher):** [`0x36181Ca1B0210b6Ea8E56755dA7B06c34ba481C0`](https://basescan.org/address/0x36181Ca1B0210b6Ea8E56755dA7B06c34ba481C0#code)
+- **`CryptoSlipTradeRouterV32` (In-Vault Slip-to-Slip Swap & Barter Router):** [`0x295E72cB3dc09582F32e0fEB7e0e650752219a7f`](https://basescan.org/address/0x295E72cB3dc09582F32e0fEB7e0e650752219a7f#code)
 
 ---
 
